@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class ItemPickup : Interactable
 {
@@ -14,7 +14,9 @@ public class ItemPickup : Interactable
     private void PickUp ()
     {
         Debug.Log("Picking up " + item.name);
-        Inventory.instance.Add(item);
-        Destroy(gameObject);
+        bool wasPickedUp = Inventory.instance.Add(item);
+
+        if (wasPickedUp)
+            Destroy(gameObject);
     }
 }

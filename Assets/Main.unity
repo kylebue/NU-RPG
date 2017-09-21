@@ -86,7 +86,8 @@ LightmapSettings:
     m_PVRFilteringAtrousColorSigma: 1
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000116, guid: e59d30d90826d754f8d9c14cd50b8d1c,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -1405,7 +1406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &276686255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3728,6 +3729,10 @@ GameObject:
   - component: {fileID: 810734480}
   - component: {fileID: 810734479}
   - component: {fileID: 810734478}
+  - component: {fileID: 810734485}
+  - component: {fileID: 810734482}
+  - component: {fileID: 810734484}
+  - component: {fileID: 810734483}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -3798,6 +3803,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &810734482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 810734477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8dd2e05abd07eb439886f0fbede34ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookRadius: 10
+--- !u!114 &810734483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 810734477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d4d918c618f65c4a9166ee89d5fcc63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 40
+  damage:
+    baseValue: 5
+  armor:
+    baseValue: 3
+--- !u!114 &810734484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 810734477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0930422f73b8cf047a8e5f6a33e9ee88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 4
+  interactionTransform: {fileID: 810734481}
+--- !u!114 &810734485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 810734477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90378ecf057101047920d0062a7a1b39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeed: 1
+  attackDelay: 0.6
 --- !u!1 &826845681
 GameObject:
   m_ObjectHideFlags: 0
@@ -4318,6 +4377,7 @@ GameObject:
   - component: {fileID: 1031932251}
   - component: {fileID: 1031932250}
   - component: {fileID: 1031932249}
+  - component: {fileID: 1031932256}
   - component: {fileID: 1031932248}
   - component: {fileID: 1031932253}
   - component: {fileID: 1031932254}
@@ -4445,6 +4505,19 @@ MonoBehaviour:
     baseValue: 5
   armor:
     baseValue: 0
+--- !u!114 &1031932256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1031932247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90378ecf057101047920d0062a7a1b39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeed: 1
+  attackDelay: 0.6
 --- !u!1001 &1035061487
 Prefab:
   m_ObjectHideFlags: 0
@@ -6011,6 +6084,7 @@ GameObject:
   - component: {fileID: 1397050313}
   - component: {fileID: 1397050312}
   - component: {fileID: 1397050314}
+  - component: {fileID: 1397050315}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6061,6 +6135,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e1d25e387981a9242b13ab74b1e0d630, type: 2}
   - {fileID: 11400000, guid: 8399ef41625b49d41ac80c578eddeb40, type: 2}
   targetMesh: {fileID: 134376105}
+--- !u!114 &1397050315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1397050311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb842011b078c284096708c92a832989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1031932247}
 --- !u!1001 &1398644250
 Prefab:
   m_ObjectHideFlags: 0
